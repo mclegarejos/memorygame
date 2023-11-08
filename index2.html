@@ -72,47 +72,51 @@
 
 
 
-    <script type="text/javascript">
-        var clicks = 0;
-        $(document).ready(function() {
-            $('.memorycards').on('click', function() {
-                clicks++;
-    
-                if (clicks == 1) {
-                    firstcard = $(this).children().attr('src');
-                    $(this).children().slideDown();
-                } else if (clicks == 2) {
-                    var secondcard = $(this).children().attr('src');
-                    $(this).children().slideDown(function() {
+<script type="text/javascript">
+$(document).ready(function() {
+    var clicks = 0;
+    $(".memorycards").click(function() {
+
+            clicks += 1;
+
+            if (clicks == 1) {
+                firstcard = $(this).children().attr("src");
+                $(this).children().slideDown();
+
+            } else if (clicks == 2) {
+                var secondcard = $(this).children().attr("src");
+                $(this).children().slideDown(function() {
+
                         if (firstcard == secondcard) {
-                            $('h2').html('YOU WIN!').css({
-                                'color': 'violet'
+                            $("h2").html("YOU WIN!").css({
+                                "color": "violet"
                             });
-                            
-                            setTimeout(function(){
-                                $('img').css( {
-                                    'display' : 'none'
-                                });
-                            }, 3000);
                             clicks = 0;
-                            
+                            $("img").css({
+                                "display": "none"
+                            });
+
                         } else {
-                            $('h2').html('YOU LOSE!').css({
-                                'color': 'red'
-                            });
-    
-                            setTimeout(function() {
-                                $('img').css({
-                                    'display': 'none'
+                            $("h2").html("YOU LOSE!").css({
+                                "color": "red"
+                            })
+                            setTimeout(function) {
+                                $("img").css({
+                                    "display": "none"
                                 });
-                            }, 3000);
-                            clicks = 0;
-                        }
-                    });
-                }
-            });
-        });
-    </script>
+                            }, 3000)
+                        clicks = 0;
+
+
+
+        }
+                })
+        }
+    })
+})
+
+
+</script>
 
 
 </body>
